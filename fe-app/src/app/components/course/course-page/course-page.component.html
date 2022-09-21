@@ -1,0 +1,27 @@
+<div class="default-page-flex">
+
+  <mat-card class="text-center width-50">
+    <div class="flex-row text-center align-center">
+      <h2 class="align-center text-center margin-left-auto margin-right-auto">{{course?.name}} ({{course?.code}})</h2>
+    </div>
+    <div class="edit-icon">
+      <mat-slide-toggle *ngIf="canShowAll" class="slide-margin" [checked]="showAll" (change)="showAllMaterials()">Show all</mat-slide-toggle>
+      <button mat-flat-button color="primary" [routerLink]="materialCreateUrl">New Material</button>
+      <button mat-icon-button [routerLink]="url">
+        <span class="material-icons">mode_edit</span>
+      </button>
+    </div>
+    <mat-card-content>
+      <p>{{course?.description}}</p>
+    </mat-card-content>
+    <mat-card-footer>
+
+    </mat-card-footer>
+  </mat-card>
+
+  <div class="width-50">
+    <mat-card class="material-card-height material-margin" *ngFor="let mat of materials">
+      <material [canOpenFull]="true" [courseId]="courseId" [materialId]="null" [material]="mat" (refresh)="refreshMaterials()"></material>
+    </mat-card>
+  </div>
+</div>

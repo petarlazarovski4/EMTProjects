@@ -1,0 +1,50 @@
+@import "src/assets/variables";
+
+.card-size {
+  width: 350px;
+  height: 350px;
+  max-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 10px;
+  transition:all 200ms;
+  &:hover {
+    //width: 220px;
+    //height: 220px;
+    width: 380px;
+    cursor: pointer;
+  }
+}
+
+.flex-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: $primary;
+  color: white;
+  height: 35px;
+}
+.margin-left {
+  margin-left:5px;
+}
+.card-content {
+  border-top: #989898 1px solid;
+  padding-top: 20px;
+  margin-bottom: auto;
+}
+
+.new-course-btn {
+  height: 51px;
+  margin-left: 10px;
+  margin-bottom: 2px;
+}

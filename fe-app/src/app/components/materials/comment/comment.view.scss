@@ -1,0 +1,38 @@
+
+.push {
+  margin-left: auto;
+}
+
+.align-left {
+  align-items: start;
+  //text-align: center;
+  justify-content: left;
+}
+
+.width {
+  max-width: 960px;
+  min-width: 600px;
+}
+.flex-1 {
+  flex:1;
+}
+
+.width-50 {
+  width: 50px
+}
+
+.margin-top-12 {
+  margin-top: 12px;
+}
+
+.button-spacing {
+  margin-left:25px;
+}
+
+.like-dislike {
+  transition:all 200ms;
+  &:hover {
+    font-size: 32px;
+    cursor: pointer;
+  }
+}

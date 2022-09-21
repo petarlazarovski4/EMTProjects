@@ -1,0 +1,19 @@
+<mat-card>
+   <div class="flex-row">
+    <h2>{{comment.description}}</h2>
+   </div>
+  <div class="flex-row align-center">
+    <div class="flex-column">
+      <span>Posted by: {{comment.createdBy}}</span>
+      <span>Date posted: {{comment.datePosted | date: 'dd-mm-yyyy H:m'}}</span>
+    </div>
+    <div class="push">
+      <button mat-icon-button (click)="upvoteComment(comment)" type="button"><span class="material-icons like-dislike icon-width">thumb_up_alt</span>
+        <span>{{comment.upVotes}}</span>
+      </button>
+      <button class="button-spacing" mat-icon-button (click)="downvoteComment(comment)" type="button"><span class="material-icons  like-dislike icon-width">thumb_down_alt</span>
+        <span>{{comment.downVotes}}</span>
+      </button>
+    </div>
+  </div>
+</mat-card>

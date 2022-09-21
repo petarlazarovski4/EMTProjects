@@ -1,0 +1,36 @@
+<div class="flex-row">
+  <h2 [class.hover]="canOpenFull" (click)="openFullPage()" >{{material?.title}}</h2>
+  <div class="push flex-row">
+    <div *ngIf='hasUnPublishPermission'>
+  <button *ngIf="material.published"  mat-icon-button class="push" (click)="unpublishMaterial()">
+    <span class="material-icons dislike">block</span>
+  </button>
+      <button *ngIf="!material.published"  mat-icon-button class="push" (click)="publishMaterial()">
+        <span class="material-icons like">publish</span>
+      </button>
+    </div>
+  <div *ngIf="canEditMaterial">
+    <button mat-icon-button [routerLink]="editUrl">
+      <span class="material-icons edit-icon">mode_edit</span>
+    </button>
+  </div>
+  </div>
+</div>
+<mat-card-content class="material-card-content-height">{{material?.description}}</mat-card-content>
+<!--Here should be items-->
+<item-wrapper class="flex-column" [items]="material.items"></item-wrapper>
+<mat-card-footer class="mat-card-footer">
+  <div class="flex-row">
+    <div class="push">
+      <button mat-icon-button (click)="upvoteMaterial(material)" type="button"><span class="material-icons like-dislike icon-width">thumb_up_alt</span>
+        <span>{{material?.upVotes}}</span>
+      </button>
+      <button class="button-spacing" mat-icon-button (click)="downvoteMaterial(material)" type="button"><span
+        class="material-icons like-dislike icon-width">thumb_down_alt</span>
+        <span>{{material?.downVotes}}</span>
+      </button>
+    </div>
+  </div>
+</mat-card-footer>
+<hr>
+<comment-wrapper [materialId]="material.id"></comment-wrapper>

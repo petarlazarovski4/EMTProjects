@@ -1,0 +1,20 @@
+@import "src/assets/variables";
+.card-width{
+  min-width: 350px;
+  width: 100%;
+  text-align: center;
+}
+
+.change-password-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: bolder;
+  color: $primary;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.btn-width-50 {
+  width: 50%;
+}

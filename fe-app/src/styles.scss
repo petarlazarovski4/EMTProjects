@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'assets/_variables.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.bg-img {
+  //background-image: url("./assets/main-page-bg.jpg");
+  //background-size: cover;
+  //background-repeat: no-repeat;
+  //background-color: #EAEAEA;
+  background: #ebebeb url("./assets/main-page-bg-4.png") 0 0 no-repeat;
+
+  //background-color: #E5E5E5;
+  //background-image: linear-gradient(
+  //    to bottom, rgba(0,0,0,0) 0%, #E5E5E5 100%
+  //), url("./assets/main-page-bg.jpg");
+  //background-repeat: no-repeat;
+
+}
+
+
+.margin-left-auto {
+  margin-left: auto ;
+}
+
+.margin-right-auto{
+  margin-right: auto;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-end {
+  align-content: end;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.full-width-input {
+  width: 100%;
+}
+
+.default-page-flex {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+}
+
+//.mat-card {
+//  background: #f8f8f8;
+//}
+
+.mat-card {
+  border-radius: 25px !important;
+}
+
+.mat-dialog-container {
+  border-radius: 25px !important;
+
+}
+
+.on-top {
+  z-index: 10;
+}

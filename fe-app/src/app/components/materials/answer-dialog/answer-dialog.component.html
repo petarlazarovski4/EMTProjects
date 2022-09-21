@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Answers</h2>
+<mat-dialog-content class="answer-dialog-width">
+<div class="answer-spacing" *ngFor="let answer of answers">
+  <mat-card [class.useful-answer]="isAnswerCorrect(answer)">
+    <div class="flex-row">
+      <h2>{{answer.answer}}</h2>
+    </div>
+    <div class="flex-row align-center">
+      <div class="flex-column">
+        <span>Posted by: {{answer.answeredBy}}</span>
+        <span>Date posted: {{answer.time | date: 'dd-MM-yyyy H:m'}}</span>
+      </div>
+      <div class="push">
+        <button mat-icon-button (click)="upVoteAnswer(answer)" type="button"><span class="material-icons icon-width">thumb_up_alt</span>
+          <span>{{answer.upVotes}}</span>
+        </button>
+        <button class="button-spacing" mat-icon-button (click)="downVoteAnswer(answer)" type="button"><span class="material-icons icon-width">thumb_down_alt</span>
+          <span>{{answer.downVotes}}</span>
+        </button>
+        <button *ngIf="canSelectMostUsefulAnswer" class="button-spacing" mat-icon-button type="button" (click)="selectUsefulAnswer(answer)"><span class="material-icons icon-width">star</span>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>
+  <form [formGroup]="answerForm" (ngSubmit)="onSubmit()">
+    <p>
+      <mat-form-field appearance="outline" class="full-width-input">
+        <mat-label>Enter Answer</mat-label>
+        <textarea matInput
+                  type="text"
+                  id="answer"
+                  name="answer"
+                  placeholder="Enter answer... "
+                  formControlName="answer">
+      </textarea>
+        <button mat-icon-button matSuffix class="align-center" [disabled]="answerForm.disabled|| !answerForm.valid" type="submit"><mat-icon>send</mat-icon></button>
+      </mat-form-field>
+    </p>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

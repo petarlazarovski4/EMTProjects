@@ -1,0 +1,68 @@
+.material-card-content-height {
+  min-height: 5vh;
+}
+
+.mat-card-footer {
+  margin-top: 10px;
+  margin-right: 10px;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.like {
+  color: green;
+
+  transition:all 200ms;
+  &:hover {
+    font-size: 32px;
+    cursor: pointer;
+  }
+}
+
+.like-dislike {
+  transition:all 200ms;
+  &:hover {
+    font-size: 32px;
+    cursor: pointer;
+  }
+}
+
+.dislike {
+  color: red;
+
+  transition:all 200ms;
+  &:hover {
+    font-size: 32px;
+    cursor: pointer;
+  }
+}
+
+.edit-icon {
+  transition:all 200ms;
+  &:hover {
+    font-size: 32px;
+    cursor: pointer;
+  }
+}
+
+.votes-margin {
+  margin-left: 5px;
+}
+
+.push {
+  margin-left: auto;
+  margin-right: 0;
+}
+.button-spacing {
+  margin-left:25px;
+}
+
+.hover {
+  cursor: pointer;
+}
+
+.mat-width {
+  min-width: 50vw;
+}
+

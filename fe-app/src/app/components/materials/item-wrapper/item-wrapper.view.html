@@ -1,0 +1,17 @@
+<div class="item-card-bottom-spacing" *ngFor="let item of items">
+  <mat-card>
+    <div *ngIf="item.type == itemTypes.QUESTION">
+      <h2>{{item.question}}</h2>
+      <p class="view-answers-text" (click)="openDialog(item.questionID)">View answers</p>
+    </div>
+
+    <div *ngIf="item.type == itemTypes.FILE">
+      <h2>{{item.name}}</h2>
+      <button mat-flat-button color="primary" (click)="downloadFile(item)">Download</button>
+    </div>
+
+    <div class="flex-row" *ngIf="item.type == itemTypes.IMAGE">
+      <img class="image-max-width" [src]="item.url" [alt]="item.name">
+    </div>
+  </mat-card>
+</div>

@@ -1,0 +1,19 @@
+<div class="default-page-flex ">
+  <div>
+  <mat-form-field appearance="outline">
+    <mat-label>Search courses..</mat-label>
+    <input [(ngModel)]="search" (ngModelChange)="searchInputChange($event)" matInput placeholder="Search courses..">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+    <button *ngIf="canAddCourse" mat-flat-button type="button" class="new-course-btn" color="primary" routerLink="/courses/create">New Course</button>
+  </div>
+</div>
+
+<div class="flex-wrap">
+<mat-card class="card-size" *ngFor="let course of displayedCourses"  [routerLink]="course.id">
+  <mat-card-title>{{course.name}} {{course.code}}</mat-card-title>
+  <mat-card-content class="card-content">
+    {{course.description}}
+  </mat-card-content>
+</mat-card>
+</div>

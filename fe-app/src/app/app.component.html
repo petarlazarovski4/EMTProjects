@@ -1,0 +1,29 @@
+<div class="">
+<div class="toolbar" role="banner">
+
+  <div>
+    <button mat-icon-button class="back-btn" (click)="back()"><span class="material-icons">arrow_back</span></button>
+  </div>
+  <a class="link-style flex-c" routerLink="/">
+  <div>
+  <span>
+    <mat-icon>school</mat-icon>
+  </span>
+    School Material Exchange
+  </div>
+  </a>
+
+</div>
+  <div class="position-name-menu">
+    <span *ngIf="user?.username">Welcome {{user.username}}</span>
+    <app-menu [user]="user"></app-menu>
+  </div>
+<div class="default-page-flex" role="main">
+  <router-outlet></router-outlet>
+
+  <footer>
+  </footer>
+
+</div>
+</div>
+<notifier-container></notifier-container>

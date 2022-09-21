@@ -1,0 +1,59 @@
+<div class="item-card-bottom-spacing" *ngFor="let item of items">
+  <mat-card>
+      <h3 *ngIf="item.type == itemTypes.QUESTION">
+        {{item.question}}
+      </h3>
+
+    <div *ngIf="item.type == itemTypes.FILE">
+      <h2>{{item.name}}</h2>
+      <button mat-flat-button color="primary" (click)="downloadFile(item)">Download</button>
+    </div>
+
+      <div class="flex-row" *ngIf="item.type == itemTypes.IMAGE">
+        <img class="image-max-width" [src]="item.url" [alt]="item.name">
+      </div>
+      <div class="flex-row row-reverse">
+      <button mat-flat-button color="warn" class="button-spacing"  (click)="deleteItem(item)">Delete</button>
+        <button mat-flat-button color="primary" *ngIf="canEdit(item.type)" (click)="changeCurrentEditItem(item)">Edit</button>
+      </div>
+  </mat-card>
+</div>
+
+<div>
+  <mat-card>
+    <mat-card-content>
+      <mat-select [(ngModel)]="newItemType">
+        <mat-option [value]="itemTypes.QUESTION">Question</mat-option>
+        <mat-option [value]="itemTypes.FILE">File</mat-option>
+        <mat-option [value]="itemTypes.IMAGE">Image</mat-option>
+      </mat-select>
+      <form [formGroup]="itemForm" (ngSubmit)="submit()">
+        <div *ngIf="newItemType == itemTypes.QUESTION">
+          <mat-form-field appearance="outline" class="full-width-input">
+            <mat-label>Enter question</mat-label>
+            <textarea matInput
+                      type="text"
+                      id="description"
+                      name="description"
+                      placeholder="Enter question... "
+                      formControlName="description">
+            </textarea>
+            <mat-error *ngIf="f.description.invalid && f.description.touched">You must input a question</mat-error>
+          </mat-form-field>
+          <button [disabled]="f.description.invalid" mat-flat-button class="margin-left-auto" color="primary" type="submit">
+          Save
+        </button>
+        </div>
+
+        <div class="align-center" *ngIf="newItemType == itemTypes.FILE || newItemType == itemTypes.IMAGE">
+          <ngx-mat-file-input class="file-input-width margin-left-right-auto" [formControl]="fileControl" color="primary"></ngx-mat-file-input>
+          <mat-progress-bar class="file-input-width margin-left-right-auto progress-bar" mode="determinate" [value]="progress"></mat-progress-bar>
+          <p class="margin-left-right-auto">Max file size: 32MB</p>
+          <button [disabled]="!canUpload" mat-flat-button class="margin-left-auto" color="primary" type="submit">
+            Save
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

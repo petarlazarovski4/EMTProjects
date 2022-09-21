@@ -1,0 +1,33 @@
+<mat-card class="flex-row width mat-card-spacing-bottom">
+  <form [formGroup]="materialForm" (ngSubmit)="submit()">
+    <p>
+      <mat-form-field appearance="outline" class="full-width-input">
+        <mat-label>Input Material title</mat-label>
+        <input matInput
+               id="title"
+               name="title"
+               placeholder="Material title"
+               formControlName="title">
+        <mat-icon matPrefix>person</mat-icon>
+        <mat-error *ngIf="f.title.invalid && f.title.touched">You must input a title for the material.</mat-error>
+      </mat-form-field>
+
+    </p>
+    <p>
+      <mat-form-field appearance="outline" class="full-width-input">
+        <mat-label>Input Material description</mat-label>
+        <input matInput
+               id="description"
+               name="description"
+               placeholder="Material description"
+               formControlName="description">
+        <mat-icon matPrefix>person</mat-icon>
+        <mat-error *ngIf="f.description.invalid && f.description.touched">You must input a description for the material.
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <button mat-flat-button color="primary" [disabled]="materialForm.invalid" type="submit">Save</button>
+  </form>
+</mat-card>
+
+<item-create-wrapper *ngIf="material" class="flex-column width" [material]="material" [items]="material.items" (refresh)="loadMaterial()"></item-create-wrapper>

@@ -1,0 +1,75 @@
+@import "src/assets/_variables";
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: $primary;
+  color: white;
+  font-weight: 600;
+  font-size: larger;
+  justify-content: center;
+}
+
+footer {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+}
+
+.push {
+  margin-left: auto;
+}
+.link-style {
+  color:white;
+  text-decoration: none;
+}
+
+.flex-l {
+  flex-grow: 3;
+}
+
+.flex-c {
+  flex-grow :4;
+}
+
+.flex-r {
+  flex-grow: 2;
+  text-align: end;
+}
+
+.position-name-menu {
+  position: absolute;
+  margin-left: auto;
+  margin-right: 0;
+  top:0;
+  right:0;
+  left:auto;
+  font-weight: 600;
+  font-size: larger;
+  color:white;
+}
+
+.back-btn {
+  background-color: transparent;
+  color:white;
+}

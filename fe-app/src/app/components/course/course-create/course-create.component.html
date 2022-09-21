@@ -1,0 +1,51 @@
+<mat-card class="card-width">
+  <mat-card-title class="text-center">
+    Create or Edit Course page
+  </mat-card-title>
+  <mat-card-content>
+<form [formGroup]="courseForm"  (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field appearance="outline" class="full-width-input">
+      <mat-label>Input Course name</mat-label>
+      <input matInput
+             id="name"
+             name="name"
+             placeholder="Course name"
+             formControlName="name">
+      <mat-icon matPrefix>person</mat-icon>
+      <mat-error *ngIf="f.name.invalid && f.name.touched">You must input a name for the course.</mat-error>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="outline" class="full-width-input">
+      <mat-label>Input Course short Code</mat-label>
+      <input matInput
+             id="code"
+             name="code"
+             placeholder="Course code"
+             formControlName="code">
+      <mat-icon matPrefix>person</mat-icon>
+      <mat-error *ngIf="f.code.invalid && f.code.touched">You must input a code for the course.</mat-error>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="outline" class="full-width-input">
+      <mat-label>Input Course description</mat-label>
+      <textarea matInput
+                rows="5"
+             id="description"
+             name="description"
+             placeholder="Course description"
+                formControlName="description"></textarea>
+      <mat-icon matPrefix>person</mat-icon>
+      <mat-error *ngIf="f.description.invalid && f.description.touched">You must input a description for the course.</mat-error>
+    </mat-form-field>
+  </p>
+  <p class="text-center">
+    <button class="btn-width" [disabled]="courseForm.invalid " mat-flat-button color="primary" type="submit">Save</button>
+  </p>
+</form>
+  </mat-card-content>
+</mat-card>

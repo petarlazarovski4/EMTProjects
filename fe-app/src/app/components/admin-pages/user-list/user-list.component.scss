@@ -1,0 +1,19 @@
+mat-row {
+  transition: background-color ease .5s;
+  &:hover {
+    background: lightgray;
+    transition: background-color ease .5s;
+    cursor: pointer;
+  }
+}
+
+.page-width {
+  min-width: 70vw;
+}
+.mat-column-id {
+  flex: 0 0 5%;
+}
+
+.width-5 {
+  width: 5%;
+}
